@@ -5,7 +5,7 @@ use backend\models\Bansongprag;
 use backend\models\Bandonkri;
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Report System';
 ?>
 <div class="site-index">
 
