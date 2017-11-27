@@ -8,7 +8,7 @@ use backend\models\Banhuakoo;
 /* @var $searchModel backend\models\SearchBanHuakoo */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'บ้านหัวคู';
+$this->title = 'บ้านดอนใคร';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="banhuakoo-index">
