@@ -1,6 +1,8 @@
 <?php
 
 use backend\models\Banhuakoo;
+use backend\models\Bansongprag;
+use backend\models\Bandonkri;
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
@@ -17,11 +19,11 @@ $this->title = 'My Yii Application';
 	    </li>
 	    <li class="list-group-item">
 	    	<a href="bansongprag">รพ.สต.บ้านสองแพรก ต.โพธิ์ทอง </a>
-	    	<span class="badge">n/a</span>
+	    	<span class="badge"><?= Bansongprag::find()->count() ?></span>
 	    </li>
 	    <li class="list-group-item">
 	    	<a href="bandonkri">รพ.สต.บ้านดอนใคร ต.กลาย </a>
-	    	<span class="badge">n/a</span>
+	    	<span class="badge"><?= Bandonkri::find()->count() ?></span>
 	    </li>
 	  </ul>
 
