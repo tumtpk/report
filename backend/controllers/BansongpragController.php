@@ -65,7 +65,7 @@ class BansongpragController extends Controller
     public function actionCreate()
     {
         $model = new Bansongprag();
-        $model->a13 = "สระแก้ว";
+        $model->a13 = "โพธิ์ทอง";
         $model->a14 = "ท่าศาลา";
         $model->a15 = "นครศรีธรรมราช";
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -86,7 +86,7 @@ class BansongpragController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $model->a13 = "สระแก้ว";
+        $model->a13 = "โพธิ์ทอง";
         $model->a14 = "ท่าศาลา";
         $model->a15 = "นครศรีธรรมราช";
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

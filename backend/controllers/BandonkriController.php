@@ -64,7 +64,7 @@ class BandonkriController extends Controller
     public function actionCreate()
     {
         $model = new Bandonkri();
-        $model->a13 = "สระแก้ว";
+        $model->a13 = "กลาย";
         $model->a14 = "ท่าศาลา";
         $model->a15 = "นครศรีธรรมราช";
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -85,7 +85,7 @@ class BandonkriController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $model->a13 = "สระแก้ว";
+        $model->a13 = "กลาย";
         $model->a14 = "ท่าศาลา";
         $model->a15 = "นครศรีธรรมราช";
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
