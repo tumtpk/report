@@ -25,6 +25,10 @@ $this->title = 'Report System';
 	    	<a href="bandonkri">รพ.สต.บ้านดอนใคร ต.กลาย </a>
 	    	<span class="badge"><?= Bandonkri::find()->count() ?></span>
 	    </li>
+	    <li class="list-group-item">
+	    	<a href="walailak">รพ.สต.วลัยลักษณ์ </a>
+	    	<span class="badge">n/a</span>
+	    </li>
 	  </ul>
 
     </div>
