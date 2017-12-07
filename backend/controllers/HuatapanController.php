@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Banhuakoo;
-use backend\models\SearchBanHuakoo;
+use backend\models\Huatapan;
+use backend\models\SeachHuatapan;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * BanhuakooController implements the CRUD actions for Banhuakoo model.
+ * WalailakController implements the CRUD actions for Walailak model.
  */
-class BanhuakooController extends Controller
+class HuatapanController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,13 +30,14 @@ class BanhuakooController extends Controller
     }
 
     /**
-     * Lists all Banhuakoo models.
+     * Lists all Huatapan models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new SearchBanHuakoo();
+        $searchModel = new SeachHuatapan();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -44,7 +45,7 @@ class BanhuakooController extends Controller
     }
 
     /**
-     * Displays a single Banhuakoo model.
+     * Displays a single Huatapan model.
      * @param integer $id
      * @return mixed
      */
@@ -56,52 +57,18 @@ class BanhuakooController extends Controller
     }
 
     /**
-     * Creates a new Banhuakoo model.
+     * Creates a new Huatapan model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Banhuakoo();
-        $model->a13 = "สระแก้ว";
+        $model = new Huatapan();
+        $model->a13 = "หัวตะพาน";
         $model->a14 = "ท่าศาลา";
         $model->a15 = "นครศรีธรรมราช";
-        $model->d1 = "2";
-        $model->d2 = "1";
-        $model->d3 = "3";
-        $model->d4 = "2";
-        $model->d5 = "3";
-        $model->d6 = "2";
-        $model->d7 = "2";
-        $model->d8 = "1";
-        $model->d9 = "2";
-        $model->d10 = "2";
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//             return $this->redirect(['view', 'id' => $model->id]);
-			$name = $model->a27;
-			$lname = $model->a28;
-			$village = $model->a10;
-        	$model = new Banhuakoo();
-        	$model->a13 = "สระแก้ว";
-        	$model->a14 = "ท่าศาลา";
-        	$model->a15 = "นครศรีธรรมราช";
-        	$model->d1 = "2";
-        	$model->d2 = "1";
-        	$model->d3 = "3";
-        	$model->d4 = "2";
-        	$model->d5 = "3";
-        	$model->d6 = "2";
-        	$model->d7 = "2";
-        	$model->d8 = "1";
-        	$model->d9 = "2";
-        	$model->d10 = "2";
-        	$model->a10 = $village;
-        	$model->a27 = $name;
-        	$model->a28 = $lname;
-        	return $this->render('create', [
-        			'model' => $model,
-        	]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -110,7 +77,7 @@ class BanhuakooController extends Controller
     }
 
     /**
-     * Updates an existing Banhuakoo model.
+     * Updates an existing Huatapan model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -118,7 +85,7 @@ class BanhuakooController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $model->a13 = "สระแก้ว";
+        $model->a13 = "หัวตะพาน";
         $model->a14 = "ท่าศาลา";
         $model->a15 = "นครศรีธรรมราช";
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -131,7 +98,7 @@ class BanhuakooController extends Controller
     }
 
     /**
-     * Deletes an existing Banhuakoo model.
+     * Deletes an existing Huatapan model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -144,15 +111,15 @@ class BanhuakooController extends Controller
     }
 
     /**
-     * Finds the Banhuakoo model based on its primary key value.
+     * Finds the Huatapan model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Banhuakoo the loaded model
+     * @return Huatapan the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Banhuakoo::findOne($id)) !== null) {
+        if (($model = Huatapan::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
@@ -160,7 +127,7 @@ class BanhuakooController extends Controller
     }
     
     public function actionExport(){
-    	$model = Banhuakoo::find()->all();
+    	$model = Huatapan::find()->all();
     	$this->layout = 'empty';
     	return $this->render('export', [
     			'model' => $model,
@@ -168,7 +135,7 @@ class BanhuakooController extends Controller
     }
     
     public function actionAdl(){
-    	$model = Banhuakoo::find()->all();
+    	$model = Huatapan::find()->all();
     	$this->layout = 'empty';
     	return $this->render('adl', [
     			'model' => $model,
@@ -176,7 +143,7 @@ class BanhuakooController extends Controller
     }
     
     public function actionOst(){
-    	$model = Banhuakoo::find()->all();
+    	$model = Huatapan::find()->all();
     	$this->layout = 'empty';
     	return $this->render('ost', [
     			'model' => $model,

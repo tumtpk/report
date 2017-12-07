@@ -42,12 +42,6 @@ $this->registerJs($str2, View::POS_END);
 
     <?= $form->field($model, 'a28')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'a4')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'a5')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'a6')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'a7')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'a8')->textInput(['maxlength' => true]) ?>
@@ -56,135 +50,32 @@ $this->registerJs($str2, View::POS_END);
 
     <?= $form->field($model, 'a10')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'a11')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'a12')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'a13')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'a14')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'a15')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'a16')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'a17')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'a18')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'a19')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'a20')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'a21')->textInput(['maxlength' => true]) ?>
     
     <?= $form->field($model, 'r')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'a22')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'a23')->textInput(['maxlength' => true]) ?>
-	
 	<?=
 	$form->field($model, 'a24')
 		->radioList(
-			["สูบ" => 'สูบ', "ไม่สูบ" => 'ไม่สูบ']
+			["สูบ" => 'สูบ', "ไม่สูบ" => 'ไม่สูบ', null => 'null']
 		)
 	?>
 	
     <?=
 	$form->field($model, 'a25')
 		->radioList(
-			["ดื่ม" => 'ดื่ม', "ไม่ดื่ม" => 'ไม่ดื่ม']
+			["ดื่ม" => 'ดื่ม', "ไม่ดื่ม" => 'ไม่ดื่ม', null => 'null']
 		)
 	?>
 
     <?= $form->field($model, 'a26')->textInput(['maxlength' => true]) ?>
 	
-	<button type="button" id="all-4">select 4</button>
-	
-    <?=
-	$form->field($model, 'o1')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-
-    <?=
-	$form->field($model, 'o2')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o3')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o4')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o5')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o6')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o7')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o8')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o9')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o10')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o11')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o12')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
 	
 	<?=
 	$form->field($model, 'd1')

@@ -3,8 +3,8 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Banhuakoo;
-use backend\models\SearchBanHuakoo;
+use backend\models\Bansanguan;
+use backend\models\SearchBansanguan;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * BanhuakooController implements the CRUD actions for Banhuakoo model.
  */
-class BanhuakooController extends Controller
+class BansanguanController extends Controller
 {
     /**
      * @inheritdoc
@@ -35,7 +35,7 @@ class BanhuakooController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SearchBanHuakoo();
+        $searchModel = new SearchBansanguan();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -62,18 +62,18 @@ class BanhuakooController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Banhuakoo();
+        $model = new Bansanguan();
         $model->a13 = "สระแก้ว";
         $model->a14 = "ท่าศาลา";
         $model->a15 = "นครศรีธรรมราช";
         $model->d1 = "2";
-        $model->d2 = "1";
-        $model->d3 = "3";
+        $model->d2 = "2";
+        $model->d3 = "2";
         $model->d4 = "2";
-        $model->d5 = "3";
+        $model->d5 = "2";
         $model->d6 = "2";
         $model->d7 = "2";
-        $model->d8 = "1";
+        $model->d8 = "2";
         $model->d9 = "2";
         $model->d10 = "2";
 
@@ -82,20 +82,22 @@ class BanhuakooController extends Controller
 			$name = $model->a27;
 			$lname = $model->a28;
 			$village = $model->a10;
-        	$model = new Banhuakoo();
+        	$model = new Bansanguan();
         	$model->a13 = "สระแก้ว";
         	$model->a14 = "ท่าศาลา";
         	$model->a15 = "นครศรีธรรมราช";
         	$model->d1 = "2";
-        	$model->d2 = "1";
-        	$model->d3 = "3";
-        	$model->d4 = "2";
-        	$model->d5 = "3";
-        	$model->d6 = "2";
-        	$model->d7 = "2";
-        	$model->d8 = "1";
-        	$model->d9 = "2";
-        	$model->d10 = "2";
+	        $model->d2 = "1";
+	        $model->d3 = "3";
+	        $model->d4 = "2";
+	        $model->d5 = "3";
+	        $model->d6 = "2";
+	        $model->d7 = "2";
+	        $model->d8 = "1";
+	        $model->d9 = "2";
+	        $model->d10 = "2";
+	        $model->a24 = "ไม่สูบ";
+	        $model->a25 = "ไม่ดื่ม";
         	$model->a10 = $village;
         	$model->a27 = $name;
         	$model->a28 = $lname;
@@ -110,7 +112,7 @@ class BanhuakooController extends Controller
     }
 
     /**
-     * Updates an existing Banhuakoo model.
+     * Updates an existing Bansanguan model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -131,7 +133,7 @@ class BanhuakooController extends Controller
     }
 
     /**
-     * Deletes an existing Banhuakoo model.
+     * Deletes an existing Bansanguan model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -144,15 +146,15 @@ class BanhuakooController extends Controller
     }
 
     /**
-     * Finds the Banhuakoo model based on its primary key value.
+     * Finds the Bansanguan model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Banhuakoo the loaded model
+     * @return Bansanguan the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Banhuakoo::findOne($id)) !== null) {
+        if (($model = Bansanguan::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
@@ -160,7 +162,7 @@ class BanhuakooController extends Controller
     }
     
     public function actionExport(){
-    	$model = Banhuakoo::find()->all();
+    	$model = Bansanguan::find()->all();
     	$this->layout = 'empty';
     	return $this->render('export', [
     			'model' => $model,
@@ -168,7 +170,7 @@ class BanhuakooController extends Controller
     }
     
     public function actionAdl(){
-    	$model = Banhuakoo::find()->all();
+    	$model = Bansanguan::find()->all();
     	$this->layout = 'empty';
     	return $this->render('adl', [
     			'model' => $model,
@@ -176,7 +178,7 @@ class BanhuakooController extends Controller
     }
     
     public function actionOst(){
-    	$model = Banhuakoo::find()->all();
+    	$model = Bansanguan::find()->all();
     	$this->layout = 'empty';
     	return $this->render('ost', [
     			'model' => $model,

@@ -2,27 +2,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\web\View;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Banhuakoo */
 /* @var $form yii\widgets\ActiveForm */
-
-
-$str2 = <<<EOT
-
-	function allFour() {
-		for (var i = 1; i <= 12 ; i++) {
-			$('input:radio[name="Banhuakoo[o'+i+']"]').filter('[value="4"]').attr('checked', true);
-		}
-	}
-
-EOT;
-$this->registerJs($str2, View::POS_END);
-
 ?>
-
-
 
 <div class="banhuakoo-form">
 
@@ -87,105 +71,19 @@ $this->registerJs($str2, View::POS_END);
 	<?=
 	$form->field($model, 'a24')
 		->radioList(
-			["สูบ" => 'สูบ', "ไม่สูบ" => 'ไม่สูบ']
+			["สูบ" => 'สูบ', "ไม่สูบ" => 'ไม่สูบ', null => 'null']
 		)
 	?>
 	
     <?=
 	$form->field($model, 'a25')
 		->radioList(
-			["ดื่ม" => 'ดื่ม', "ไม่ดื่ม" => 'ไม่ดื่ม']
+			["ดื่ม" => 'ดื่ม', "ไม่ดื่ม" => 'ไม่ดื่ม', null => 'null']
 		)
 	?>
 
     <?= $form->field($model, 'a26')->textInput(['maxlength' => true]) ?>
-	
-	<button type="button" id="all-4">select 4</button>
-	
-    <?=
-	$form->field($model, 'o1')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
 
-    <?=
-	$form->field($model, 'o2')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o3')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o4')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o5')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o6')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o7')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o8')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o9')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o10')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o11')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
-	<?=
-	$form->field($model, 'o12')
-		->radioList(
-			[0 => '0', 1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', null => 'null']
-		)
-	?>
-	
 	<?=
 	$form->field($model, 'd1')
 		->radioList(
@@ -265,12 +163,12 @@ $this->registerJs($str2, View::POS_END);
 </div>
 
 <script type="text/javascript">
-	document.getElementById("banhuakoo-a5").onchange = function() {myFunction()};
-	document.getElementById("all-4").onclick = function() {allFour()};
+	document.getElementById("huatapan-a5").onchange = function() {myFunction()};
 	
 	function myFunction() {
-		var age = document.getElementById("banhuakoo-a5").value;
-		var date = "01/01/"+(2560-age);
-		document.getElementById("banhuakoo-a6").value = date;
+		var age = document.getElementById("huatapan-a5").value;
+		var date = "01/01/"+(2560-age-1);
+		document.getElementById("huatapan-a6").value = date;
+		document.getElementById("huatapan-a5").value = parseInt(age)+1;
 	}
 </script>
